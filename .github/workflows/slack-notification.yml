@@ -11,6 +11,8 @@ jobs:
           webhook-type: incoming-webhook
           payload: 
             channel: github-actions
-            text: "MkEdify Wrokflow Triggered, Workflow Run No: '$GITHUB_RUN_NUMBER'"
+            text: "MkEdify Wrokflow Triggered, Workflow Run No: ${{ github.run_number }}"
+
+
           
 
