@@ -1,0 +1,16 @@
+name: Slack Notification
+on: workflow_dispatch
+jobs:
+  notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Notification
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{secrets.SLACK_WEBHOOK}}
+          webhook-type: incoming-webhook
+          payload: 
+            channel: github-actions
+            text: "MkEdify Wrokflow Triggered, Workflow Run No: '$GITHUB_RUN_NUMBER'"
+          
+
